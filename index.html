@@ -2,9 +2,8 @@
   <head>
     <title>
       Art de Leo
-        </title>
-      </head>
-      <style>
+    </title>
+    <style>
       .body {
         background-image: url("./images/background.jpg");
         background-size: cover;
@@ -26,17 +25,65 @@
         margin: 1em;
         overflow:auto;
       }
-      </style>
+      [id*="picturesView"] {
+        width: 400;
+        height: 100vh;
+        overflow-y: scroll;
+        margin-left: auto;
+        margin-right: auto;
+
+      }
+      [class*="imageThumbnail"] {
+       width: 360;
+       padding: 10;
+       display: block;
+      }
+      @media only screen and (min-width: 768px) and (orientation: landscape) {
+        .imageThumbnail {
+          display: inline;
+          width: 30%;
+        }
+        #picturesView {
+          width: 80vw;
+        }
+      }
+    </style type="text/javascript">
+    <script>
+    //<![CDATA[
+var index = 1;
+var tempImg = new Image();
+tempImg.onload = function(){
+   appendImage();
+}
+
+var tryLoadImage = function( index ){
+   tempImg.src = `images/IMG_${index}_thumbnail.jpg`;
+}
+var appendImage = function(){
+   if (index === 37) return;
+
+   var img = document.createElement('img');
+   img.src = tempImg.src;
+   var picturesView = document.getElementById("picturesView");
+   img.setAttribute('class', ['imageThumbnail']);
+   picturesView.appendChild( img )
+   try {
+     tryLoadImage( ++index )
+   }
+   catch (error) {
+   }
+}
+tryLoadImage( index );
+
+    //]]>
+    </script>
+  </head>
   <body class="body">
     <div class="intro-paragraph english">
     Leonardo Mennilli, was born in Mar del Plata, Argentina. When he arrived to the United States of America, he fell in love with the great country. When Covid-19 arrived in 2020, Leo was stuck at home and he started to paint. He continues to learn and create his abstract paintings in acrylic.
     </div>
-    <div class="under-construction">
-      Under construction<p>
-      En construcción
-    </div>
-    <div class="intro-paragraph spanish">
-    Leonardo Mennilli, nació en Mar del Plata, Argentina. Llegó en los EEUU y se quedó enamorado del gran pais. En el 2020 llego el Covid-19 y despues de tanto encierro comenzó a pintar, asi aprendiendo y creando sus pinturas abstractas en acrilico.
-    </div>
+    <div id="picturesView">
+
+		</div>
   </body>
 </html>

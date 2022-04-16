@@ -1,5 +1,6 @@
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>
       Art de Leo
     </title>
@@ -7,23 +8,20 @@
       .body {
         background-image: url("./images/background.jpg");
         background-size: cover;
-        height: 100vh;
-        width: 100vw;
-      }
-      .under-construction {
-        color: black;
-        font-size: calc(4em + 1vw);
-        width: 50%;
-        margin: auto;
-        color: white;
+        text-align: center;
       }
       .intro-paragraph {
         background-color: rgba(255, 255, 255, 0.8);
         padding: 1em;
-        font-size: calc(1em + 1vw);
-        height:auto;
         margin: 1em;
-        overflow:auto;
+      }
+      .instagram-contact {
+        color: white;
+        display: inline-block;
+        text-decoration: none;
+        font-size: small;
+        text-align: left;
+        zoom: 1;
       }
       [id*="picturesView"] {
         width: 400;
@@ -31,7 +29,6 @@
         overflow-y: scroll;
         margin-left: auto;
         margin-right: auto;
-
       }
       [class*="imageThumbnail"] {
        width: 360;
@@ -81,6 +78,9 @@ tryLoadImage( index );
   <body class="body">
     <div class="intro-paragraph english">
     Leonardo Mennilli, was born in Mar del Plata, Argentina. When he arrived to the United States of America, he fell in love with the great country. When Covid-19 arrived in 2020, Leo was stuck at home and he started to paint. He continues to learn and create his abstract paintings in acrylic.
+    </div>
+    <div>
+      <a class="instagram-contact" href="https://instagram.com/art_de_leo?utm_medium=copy_link" target="_blank"><img style="vertical-align:middle" src="images/Instagram_Glyph_Gradient_RGB.png" width="30" height="30" /> Interested in buying a painting? Contact Leo.</a>
     </div>
     <div id="picturesView">
 
